@@ -48,12 +48,22 @@ def recognizer_eng():
             continue
 
 
+
 def voiceover(string):
-    speech = gTTS(text = string, lang = "tr", slow = False)
+    speech = gTTS(text=string, lang="tr", slow=False)
     audio_file = "tts_audio.mp3"
     speech.save(audio_file)
-    playsound.playsound(audio_file)
+    
+    pygame.mixer.init()
+    pygame.mixer.music.load(audio_file)
+    pygame.mixer.music.play()
+
+    while pygame.mixer.music.get_busy():
+        pygame.time.Clock().tick(10)
+
+    pygame.mixer.quit()
     os.remove(audio_file)
+
 
 
 
