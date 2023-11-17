@@ -25,10 +25,3 @@ Install dependencies using:
 - pip install torch fuzzywuzzy SpeechRecognition gTTS pygame playsound numpy
 
 
-## Usage
-
-### 1. Installation
-
-Install the required dependencies:
-
-- pip install -r requirements.txt
